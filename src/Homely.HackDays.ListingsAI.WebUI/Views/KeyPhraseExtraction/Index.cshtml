@@ -1,0 +1,53 @@
+﻿@using System.Linq;
+@model Homely.HackDays.ListingsAI.WebUI.Models.KeyPhraseResults
+
+@{
+    ViewData["Title"] = "Key Phrase Extraction Testing";
+}
+
+<div>
+
+    <form method="POST">
+        Url of Listing: <input type="text" id="listingId" name="listingId" value="4743618" />
+        <input type="submit" />
+    </form>
+
+    <div>
+        @if (!string.IsNullOrWhiteSpace(Model?.Description))
+        {
+            <p>
+                Description: @Model.Description
+            </p>
+        }
+
+        @if (Model != null &&
+            Model.PopularTags != null &&
+            Model.PopularTags.Any())
+        {
+            <p>
+                Popular tags:
+                <ul>
+                    @foreach (var tag in Model.PopularTags)
+                    {
+                        <li>@tag</li>
+                    }
+                </ul>
+            </p>
+        }
+
+        @if (Model != null &&
+             Model.UnpopularTags != null &&
+             Model.UnpopularTags.Any())
+        {
+            <p>
+                Unpopular tags:
+                <ul>
+                    @foreach (var tag in Model.UnpopularTags)
+                    {
+                        <li>@tag</li>
+                    }
+                </ul>
+            </p>
+        }
+    </div>
+</div>
