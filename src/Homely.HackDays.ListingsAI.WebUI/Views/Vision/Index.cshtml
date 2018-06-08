@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Homely.HackDays.ListingsAI.WebUI.Models.Vision.DescribeResultModel>
+
+@{
+    ViewData["Title"] = "Azure Cognitive Services - 'Describe Image' API";
+}
+
+<style type="text/css">
+    .selected {
+        background: yellow;
+    }
+
+    img {
+        width:500px;
+    }
+</style>
+
+<div>
+    <h2><a href="https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fe">@ViewData["Title"]</a></h2>
+    <p>
+        This operation generates a description of an image in human readable language with complete sentences. The description is based on a collection of content tags, which are also returned by the operation. More than one description can be generated for each image. Descriptions are ordered by their confidence score. All descriptions are in English.
+    </p>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Caption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tags)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="@item.Url" />
+            </td>
+            <td><span>@item.Caption</span></td>
+            <td>
+                @foreach (var tag in item.Tags)
+                {
+                    @Html.ActionLink(tag.Name, "Index", "Vision", new { tag = tag.Name }, new { @class = tag.CssClass })
+                    <span>,&nbsp;</span>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Homely.HackDays.ListingsAI.WebUI.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +18,9 @@ namespace Homely.HackDays.ListingsAI.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var azureSettings = Configuration.GetSection(AzureSettings.ConfigurationKey);
+            services.Configure<AzureSettings>(azureSettings);
+
             services.AddMvc();
         }
 
