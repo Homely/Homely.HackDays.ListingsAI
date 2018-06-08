@@ -1,4 +1,6 @@
 ﻿using Homely.HackDays.ListingsAI.WebUI.Configuration;
+using Homely.HackDays.ListingsAI.WebUI.Models;
+using Homely.HackDays.ListingsAI.WebUI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +23,18 @@ namespace Homely.HackDays.ListingsAI.WebUI
             var azureSettings = Configuration.GetSection(AzureSettings.ConfigurationKey);
             services.Configure<AzureSettings>(azureSettings);
 
+            services.AddHttpClient<HomelyListingsClient>();
+            services.AddHttpClient<AzureCognitiveClient>(c =>
+            {
+                c.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", 
+                                            azureSettings.Get<AzureSettings>().TextAnalyticsApiKey);
+            });
+
+            services.AddSingleton<IKeyPhraseExtractionService>(s => 
+                new KeyPhraseExtractionService("AppData/tags.txt",
+                                               s.GetService<HomelyListingsClient>(),
+                                               s.GetService<AzureCognitiveClient>()));
+            
             services.AddMvc();
         }
 
@@ -29,7 +43,6 @@ namespace Homely.HackDays.ListingsAI.WebUI
         {
             if (env.IsDevelopment())
             {
-                app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
             }
             else

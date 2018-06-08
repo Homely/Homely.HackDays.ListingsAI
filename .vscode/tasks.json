@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/Homely.HackDays.ListingsAI.WebUI/Homely.HackDays.ListingsAI.WebUI.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

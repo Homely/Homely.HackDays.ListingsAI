@@ -4,7 +4,7 @@
     {
         public const string ConfigurationKey = "Azure";
 
+        public string TextAnalyticsApiKey { get; set; }
         public string ComputerVisionApiKey { get; set; }
-
     }
 }
