@@ -1,6 +1,7 @@
 ﻿using Homely.HackDays.ListingsAI.WebUI.Configuration;
 using Homely.HackDays.ListingsAI.WebUI.Models;
 using Homely.HackDays.ListingsAI.WebUI.Services;
+using Homely.HackDays.ListingsAI.WebUI.Services.ComputerVision;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -34,7 +35,11 @@ namespace Homely.HackDays.ListingsAI.WebUI
                 new KeyPhraseExtractionService("App_Data/tags.txt",
                                                s.GetService<HomelyListingsClient>(),
                                                s.GetService<AzureCognitiveClient>()));
-            
+
+            services.AddSingleton<IComputerVisionService>(
+                new ComputerVisionService("App_Data/mosman-list.json", 
+                                          azureSettings.Get<AzureSettings>().ComputerVisionApiKey));
+          
             services.AddMvc();
         }
 
