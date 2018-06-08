@@ -6,11 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="App_Data\listingDetailsSample.txt" />
     <None Remove="App_Data\Tags.txt" />
     <None Remove="Properties\PublishProfiles\homely-listings-ai-hack - Web Deploy.pubxml" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="App_Data\listingDetailsSample.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Data\Tags.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

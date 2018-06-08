@@ -14,7 +14,7 @@ namespace Homely.HackDays.ListingsAI.WebUI.Controllers
 
         public IActionResult ValidateText()
         {
-            var text = System.IO.File.ReadAllText(@"C:\temp\Hackdays\listingDetailsSample.txt");
+            var text = System.IO.File.ReadAllText(@"App_Data\listingDetailsSample.txt");
             text = text.Replace(System.Environment.NewLine, " ");
 
             var result = _contentModerationService.ValidateText(text);

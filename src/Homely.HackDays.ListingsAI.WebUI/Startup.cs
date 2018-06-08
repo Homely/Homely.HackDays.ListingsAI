@@ -72,7 +72,7 @@ namespace Homely.HackDays.ListingsAI.WebUI
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=ContentModerator}/{action=ValidateText}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

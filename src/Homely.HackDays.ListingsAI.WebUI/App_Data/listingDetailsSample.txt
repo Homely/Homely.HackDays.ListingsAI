@@ -1,0 +1,202 @@
+{
+    "listingType": 1,
+    "listing": {
+        "propertyType": 14,
+        "buildingDetails": {
+            "isNewConstruction": false
+        },
+        "id": 2756182,
+        "uri": "13-386-esplanade-torquay-qld-4655",
+        "tier": 1,
+        "info": {
+            "title": "RESORT LIFESTYLE",
+            "description": "2 BDROOM UNIT\nBUILT INS, OWN LANDRY, BIG BALCONY OFF THE LOUNGE ROOM.\nAIR CONDITIONED, BEACH ACROSS THE ROAD.\nRESORT LIVNG AT ITS BEST, WITH, TENIS COURT.\nMULTIPLE BBQ AREAS, RESORT POOL, SAUNA. and so much more.\n\nDON?T WAIT ENQUIRE TODAY. crap. test@gmail.com",
+            "postcode": 4655,
+            "listingClass": 1,
+            "isAvailable": true,
+            "price": {
+                "shortDescription": "$225k",
+                "longDescription": "$225,000"
+            },
+            "statuses": []
+        },
+        "location": {
+            "id": 5716550,
+            "uri": "torquay-wide-bay-burnett-hervey-bay-queensland",
+            "isHidden": false,
+            "address": "13/386 Esplanade",
+            "suburb": "Torquay",
+            "state": "Queensland",
+            "stateCode": "QLD",
+            "latLong": {
+                "latitude": -25.2851696,
+                "longitude": 152.8625759
+            }
+        },
+        "mainFeatures": {
+            "bathrooms": 2,
+            "bedrooms": 2,
+            "carSpaces": 0
+        },
+        "additionalFeatures": {
+            "indoor": [
+                "airConditioning"
+            ],
+            "outdoor": [
+                "pool"
+            ],
+            "eco": [],
+            "carports": 0,
+            "garages": 0,
+            "ensuites": 0,
+            "livingAreas": 0,
+            "openSpaces": 0,
+            "toilets": 2,
+            "otherFeatures": "Built-In Wardrobes, Close to Schools, Close to Shops, Close to Transport"
+        },
+        "landDetails": {
+            "depths": []
+        },
+        "images": [
+            {
+                "identifier": "l-MyDesktop-ko2_rQ8Lnki-a3n37SlT4A",
+                "isDefault": false
+            },
+            {
+                "identifier": "l-MyDesktop-OOdX7eCFekiheB3ybJG6NA",
+                "isDefault": false
+            },
+            {
+                "identifier": "l-MyDesktop-DxT9_y6850CHlCu2ayUWYg",
+                "isDefault": false
+            },
+            {
+                "identifier": "l-MyDesktop-JG4jJv5g0020DrtivPNzVA",
+                "isDefault": false
+            },
+            {
+                "identifier": "l-MyDesktop-rWeVvs0uYkuSjveiOQB_Og",
+                "isDefault": false
+            },
+            {
+                "identifier": "l-MyDesktop-OBb0ppmYTE2gIJ6wwk_Lgg",
+                "isDefault": false
+            },
+            {
+                "identifier": "l-MyDesktop-irwCqpNgY02Sdqm5lQsFhA",
+                "isDefault": false
+            },
+            {
+                "identifier": "l-MyDesktop-zQBITc-VM0Wbyi8LRQ3OMg",
+                "isDefault": false
+            },
+            {
+                "identifier": "l-MyDesktop-1Ds6utTd2kezhgScLr_M4Q",
+                "isDefault": false
+            }
+        ],
+        "floorPlans": [],
+        "documents": [],
+        "videos": [],
+        "office": {
+            "id": 24411,
+            "name": "Hervey Bay",
+            "fullName": "Raine & Horne Hervey Bay",
+            "address": "357 The Esplanade, Scarness",
+            "uri": "raine-horne-hervey-bay",
+            "communications": [
+                {
+                    "communicationType": 1,
+                    "details": "herveybay@rhq.com.au"
+                },
+                {
+                    "communicationType": 3,
+                    "details": "07 4128 2188"
+                }
+            ]
+        },
+        "agents": [
+            {
+                "id": 25276716,
+                "name": "Raine & Horne Hervey Bay",
+                "isPremier": false,
+                "isBoosted": false,
+                "avatar": {
+                    "identifier": "user-default",
+                    "isDefault": true
+                },
+                "communications": [
+                    {
+                        "communicationType": 3,
+                        "details": "0741282188"
+                    }
+                ]
+            }
+        ],
+        "inspections": [],
+        "externalLinks": [
+            "http://tour.previsite.com/14909FE9-BC27-F6E9-9F1F-99DBB8FAD9B9"
+        ]
+    },
+    "similarListingIds": [
+        3943957,
+        3885898,
+        3926604,
+        3907863,
+        3901729,
+        3895120
+    ],
+    "otherAgents": [
+        {
+            "id": 419286,
+            "username": "billdow",
+            "name": "Bill Dow",
+            "avatar": {
+                "identifier": "user-419286",
+                "version": "1490323950",
+                "isDefault": false
+            },
+            "office": {
+                "id": 22169,
+                "fullName": "Elders Real Estate Hervey Bay"
+            },
+            "isPremier": true,
+            "tier": 3,
+            "isBoosted": true,
+            "followerCount": 2,
+            "showAgentReviews": true,
+            "reviewSummary": {
+                "reviewCount": 5,
+                "rating": 5
+            },
+            "transactions": [
+                {
+                    "range": "12 months",
+                    "sales": {
+                        "count": 1,
+                        "value": 0,
+                        "max": 0,
+                        "avg": 0,
+                        "valueDescription": "Undisclosed",
+                        "maxDescription": "Undisclosed",
+                        "avgDescription": "Undisclosed"
+                    }
+                }
+            ],
+            "communications": [
+                {
+                    "communicationType": 1,
+                    "details": "bill.dow@eldersrealestate.com.au"
+                },
+                {
+                    "communicationType": 2,
+                    "details": "0412 644 422"
+                },
+                {
+                    "communicationType": 3,
+                    "details": "07 4125 5244"
+                }
+            ]
+        }
+    ]
+}
