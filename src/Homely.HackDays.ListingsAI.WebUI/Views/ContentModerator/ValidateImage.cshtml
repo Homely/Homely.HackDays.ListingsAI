@@ -1,0 +1,18 @@
+﻿@model EvaluationData
+@{
+    ViewData["Title"] = "ValidateImage";
+}
+
+<h2>ValidateImage</h2>
+<img src="https://i.imgflip.com/wo06b.jpg" height="100" width="100" />
+<br />
+<li>
+    Adult classified: @Model.ImageModeration.IsImageAdultClassified
+    <br />
+    Score: @Model.ImageModeration.AdultClassificationScore
+</li>
+<li>
+    Racy classified: @Model.ImageModeration.IsImageRacyClassified
+    <br />
+    Score: @Model.ImageModeration.RacyClassificationScore
+</li>

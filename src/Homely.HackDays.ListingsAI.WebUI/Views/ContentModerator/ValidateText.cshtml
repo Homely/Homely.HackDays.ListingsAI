@@ -1,0 +1,37 @@
+﻿@model Microsoft.CognitiveServices.ContentModerator.Models.Screen
+
+@{
+    ViewData["Title"] = "ValidateText";
+}
+
+<h2>ValidateText</h2>
+
+<b>Original Text:</b>
+<p>
+    @Model.OriginalText
+</p>
+
+<b>Classifications:</b>
+<li>
+    Category 1: (sexually explicit or adult in certain situations)
+     <br/>   @Model.Classification.Category1.Score.GetValueOrDefault()
+</li>
+<li>
+    Category 2: (sexually suggestive or mature in certain situations)
+     <br/>   @Model.Classification.Category2.Score.GetValueOrDefault()
+</li>
+<li>
+    Category 2: (offensive in certain situations)
+     <br/>   @Model.Classification.Category3.Score.GetValueOrDefault()
+</li>
+<li>
+    Review recommended:
+      <br/>  @Model.Classification.ReviewRecommended.GetValueOrDefault()
+</li>
+<br/>
+<b>Terms found:</b>
+@foreach (var term in Model.Terms)
+{
+    <li>@term.Term</li>
+}
+

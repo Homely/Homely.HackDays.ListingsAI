@@ -6,5 +6,6 @@
 
         public string TextAnalyticsApiKey { get; set; }
         public string ComputerVisionApiKey { get; set; }
+		public string ContentModeratorApiKey { get; set; }
     }
 }

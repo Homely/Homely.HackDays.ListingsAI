@@ -1,9 +1,12 @@
 ﻿using Homely.HackDays.ListingsAI.WebUI.Configuration;
+using Homely.HackDays.ListingsAI.WebUI.Services.ContentModeration;
 using Homely.HackDays.ListingsAI.WebUI.Models;
 using Homely.HackDays.ListingsAI.WebUI.Services;
 using Homely.HackDays.ListingsAI.WebUI.Services.ComputerVision;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Azure.CognitiveServices.ContentModerator;
+using Microsoft.CognitiveServices.ContentModerator;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -39,6 +42,14 @@ namespace Homely.HackDays.ListingsAI.WebUI
             services.AddSingleton<IComputerVisionService>(
                 new ComputerVisionService("App_Data/mosman-list.json", 
                                           azureSettings.Get<AzureSettings>().ComputerVisionApiKey));
+
+			var contentModeratorClient = new ContentModeratorClient(new ApiKeyServiceClientCredentials(azureSettings.Get<AzureSettings>().ContentModeratorApiKey))
+            {
+                BaseUrl = "australiaEast.api.cognitive.microsoft.com"
+            };
+
+            services.AddSingleton<IContentModeratorClient>(contentModeratorClient);
+            services.AddSingleton<IContentModerationService, ContentModerationService>();
           
             services.AddMvc();
         }
@@ -61,7 +72,7 @@ namespace Homely.HackDays.ListingsAI.WebUI
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=ContentModerator}/{action=ValidateText}/{id?}");
             });
         }
     }
