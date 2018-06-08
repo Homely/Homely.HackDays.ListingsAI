@@ -31,7 +31,7 @@ namespace Homely.HackDays.ListingsAI.WebUI
             });
 
             services.AddSingleton<IKeyPhraseExtractionService>(s => 
-                new KeyPhraseExtractionService("AppData/tags.txt",
+                new KeyPhraseExtractionService("App_Data/tags.txt",
                                                s.GetService<HomelyListingsClient>(),
                                                s.GetService<AzureCognitiveClient>()));
             
